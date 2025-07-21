@@ -137,10 +137,10 @@ python -m Experimental.runs.main \
 You can adjust any of the flags to match your simulation setup. An initial state is already preloaded in Experimental.runs.system_setup.py, consisting of an initial state
 with polarization only on the first site and maximally mixed-state in the others.
 
-### 4. Exploration
+### 6. Exploration
 
 With everything installed, the only steps left are to write your own Adaptive Max-Ent evolutions in Jupyter Notebook 
-using our libraries, see Tutorials for some examples.
+using our libraries our with Experimental.runs.main.py script.
 
 ## Usage
 
