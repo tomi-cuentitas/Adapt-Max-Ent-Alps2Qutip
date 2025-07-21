@@ -161,5 +161,6 @@ From there on, one can define an inital state and start using adaptive Max-Ent e
 thousands of actualizations. 
 ## Examples
 
-In Tutorials, a series of tutorials can be found, showcasing different examples and behaviours of interest. Feel free to write your own and contact me for 
+In Experimental, a series of tutorials **will** be found, showcasing different examples and behaviours of interest. Feel free to write your own and contact me for 
 bugs or comments!
+For the time being, you can follow the scripts for some particular examples and run them and modify parameters, intitial states and the likes!
