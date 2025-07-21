@@ -73,31 +73,69 @@ The method adapts by monitoring the error measured via a figure of merit, the $p
 
 ---
 
-## Installation
+# 🛠 Installation
 
-To set up the environment for this project:
+To install and run this project properly, follow these steps:
 
-### 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/max-ent-evolutions.git
-   cd max-ent-evolutions
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/tomi-cuentitas/Adapt-Max-Ent-Alps2Qutip.git
+cd Adapt-Max-Ent-Alps2Qutip
 ```
 
-### 2. Install Dependencies
+## 2. Set the `PYTHONPATH`
 
-Use `pip` to install the required Python libraries:  
-   ```bash
-   pip install -r requirements.txt
+The core modules are located under `modular_alps2qutipplus/`. You need to add it to your `PYTHONPATH`:
+
+```bash
+export PYTHONPATH=$(pwd)/modular_alps2qutipplus
 ```
 
-### 3. Set up a Virtual Environment (Optional)
+To make this permanent, add the line to your `.bashrc`, `.zshrc`, or shell config.
 
-To avoid conflicts with your system Python installation, create and activate a virtual environment:  
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # On Windows: venv\Scripts\activate
-  pip install -r requirements.txt
+## 3. (Optional) Create and activate a virtual environment
+
+This step is recommended to avoid conflicts with system-wide packages:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
+
+## 4. Install dependencies
+
+Use the provided requirements file:
+
+```bash
+pip install -r requirements.txt
+```
+
+If `requirements.txt` is missing or outdated, you can install manually:
+
+```bash
+pip install numpy scipy qutip tqdm matplotlib
+```
+
+## 5. Running an example
+
+You can run a standard simulation via the `main.py` entrypoint in `Experimental/runs/`:
+
+```bash
+cd modular_alps2qutipplus
+
+python -m Experimental.runs.main \
+    --size 7 \
+    --Jx 1.75 --Jy 1.575 --Jz 0.0 \
+    --t_max 30 --steps 100 \
+    --depth 6 --m0 3 --eps 1e-3 \
+    --num_workers 4 \
+    --save_every 20 \
+    --out results
+```
+
+You can adjust any of the flags to match your simulation setup. An initial state is already preloaded in Experimental.runs.system_setup.py, consisting of an initial state
+with polarization only on the first site and maximally mixed-state in the others.
 
 ### 4. Exploration
 
